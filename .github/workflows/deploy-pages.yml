@@ -30,15 +30,8 @@ jobs:
           cd apps/wordcraft-web
           trunk build --release --public-url /mywordcraft/
           
-      - name: Výpis vygenerovaných souborů
-        run: |
-          echo "Obsah složky apps/wordcraft-web:"
-          ls -la apps/wordcraft-web/
-          echo "Hledání složky dist nebo index.html všude:"
-          find . -name "index.html"
-
       - name: Publikování na GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./apps/wordcraft-web/dist
+          publish_dir: ./dist/web
