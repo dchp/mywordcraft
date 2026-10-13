@@ -23,7 +23,7 @@ jobs:
           targets: wasm32-unknown-unknown
 
       - name: Instalace nástroje Trunk
-        run: cargo install trunk
+        run: cargo install trunk --locked
 
       - name: Sestavení webové aplikace
         run: |
